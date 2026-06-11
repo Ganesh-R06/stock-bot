@@ -39,7 +39,7 @@ else:
     up_down="🔻"
 
 percentage_difference = round((difference / float(day_before_yesterday_closing_date)) * 100)
-if abs(percentage_difference)>1:
+if abs(percentage_difference)>0:
 
     news_parameter={
         "apikey":news_API_KEY,
