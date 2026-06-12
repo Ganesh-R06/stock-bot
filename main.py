@@ -50,7 +50,11 @@ if abs(percentage_difference)>=0:
 
     three_article=news_data[:3]
 
-    formatted_article=[f"{STOCK_NAME}: {up_down}{percentage_difference} %\n Headline:{article['title']}. \n Brief:{article['description']}"for article in three_article]
+    formatted_article = [
+    f"{STOCK_NAME}: {up_down}{percentage_difference}%\n"
+    f"Headline: {article['title']}\n"
+    f"Brief: {article.get('description') or article.get('content') or 'No description available'}"
+    for article in three_article]
 
     TWILIO_PHONE = os.environ.get("TWILIO_PHONE")
     MY_PHONE = os.environ.get("MY_PHONE")
